@@ -33,9 +33,9 @@ router.get(
       .then(profile => {
         if (!profile) {
           errors.noprofile = "There is no profile for user";
-          res.status(404).json(errors);
+          return res.status(404).json(errors);
         }
-        res.json(profile);
+        return res.json(profile);
       })
       .catch(err => res.status(400).json(err));
   }
