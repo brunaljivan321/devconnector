@@ -2,6 +2,19 @@ img {
   width: 100%;
 }
 
+.link-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline;
+  margin: 0;
+}
+
+.link-button:hover,
+.link-button:focus {
+text-decoration: none;
+}
+
 .landing {
   position: relative;
   background: url("./img/showcase.jpg") no-repeat;

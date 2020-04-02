@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import Proptypes from "prop-types";
 
 import TextFieldGroup from "../common/TextFieldGroup";
@@ -56,6 +56,7 @@ class CreateProfile extends Component {
         : "";
       profile.bio = !isEmpty(profile.bio) ? profile.bio : "";
       profile.social = !isEmpty(profile.social) ? profile.social : {};
+      this.setState({displaySocialInputs: !isEmpty(profile.social) ? true : false});
       profile.twitter = !isEmpty(profile.social.twitter)
         ? profile.social.twitter
         : "";
@@ -185,6 +186,9 @@ class CreateProfile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
+            <Link to="/dashboard" className="btn btn-light">
+                Go Back
+              </Link>
               <h1 className="display-4 text-center"> Edit Profile</h1>
               <small className="d-block pd-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
